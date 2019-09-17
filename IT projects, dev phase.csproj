@@ -1,0 +1,9 @@
+g<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <RootNamespace>IT_projects__dev_phase</RootNamespace>
+  </PropertyGroup>
+
+</Project>
