@@ -30,7 +30,7 @@ namespace IT_projects__dev_phase
 
         }
         public static double calculateBodyMass () {
-            Console.WriteLine ("What's your bodyweight in kg-s  -(can be having a comma) ?");
+            Console.WriteLine ("What's your bodyweight in kg-s  -(use a point insetad of a comma) ?");
          double bodyWeight = double.Parse(Console.ReadLine());
             Console.WriteLine("What's your length in centimeters?");
          double lengthSquare = Math.Pow (double.Parse(Console.ReadLine()),2);
