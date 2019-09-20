@@ -11,7 +11,7 @@ namespace IT_projects__dev_phase
             int age;
             //double bodyMass  = calculateBodyMass();
             //int intBodyMass = int.Parse(calculateBodyMass().ToString()); 
-             
+
             //double weight;
             //double length;
             Console.WriteLine("What's your name?");
@@ -25,29 +25,32 @@ namespace IT_projects__dev_phase
                 Console.ReadLine();
                 Console.WriteLine(BodyMassSuggestions(CalculateBodyMass()));
                 Console.ReadLine();
-                
+
             }
             else
             {
                 Console.WriteLine("You can not get right results as your age is not between 20-60 years. Therefore there will be no calculations, thank you!");
             }
-            
+
 
         }
-          public static string BodyMassSuggestions (double num) {
+        public static string BodyMassSuggestions(double num)
+        {
             string suggestion;
 
-            if (CalculateBodyMass()<16) {
+            if (CalculateBodyMass() < 16)
+            {
 
                 suggestion = "You are in severe underweight)";
                 return suggestion;
             }
 
-            else if (CalculateBodyMass() >= 16 && CalculateBodyMass()<18.6) {
+            else if (CalculateBodyMass() >= 16 && CalculateBodyMass() < 18.6)
+            {
                 suggestion = "You are in underweight)";
                 return suggestion;
             }
-            else if (CalculateBodyMass() >= 18.6 && CalculateBodyMass() <=25)
+            else if (CalculateBodyMass() >= 18.6 && CalculateBodyMass() <= 25)
             {
                 suggestion = "You are in normal weight)";
                 return suggestion;
@@ -58,7 +61,7 @@ namespace IT_projects__dev_phase
                 return suggestion;
             }
 
-            else if (CalculateBodyMass() >= 30.1 && CalculateBodyMass() <=35)
+            else if (CalculateBodyMass() >= 30.1 && CalculateBodyMass() <= 35)
             {
                 suggestion = "You are in obesity)";
                 return suggestion;
@@ -86,7 +89,9 @@ namespace IT_projects__dev_phase
             Console.WriteLine("What's your length in centimeters?");
             Double lengthSquare = Math.Pow(Double.Parse(Console.ReadLine()), 2);
             Double bodyMass = bodyWeight / lengthSquare;
-            return bodyMass;
+            return Math.Round( bodyMass*10000,2);
         }
     }
 }
+
+ 
