@@ -91,7 +91,12 @@ namespace IT_projects__dev_phase
             Double bodyMass = bodyWeight / lengthSquare;
             return Math.Round( bodyMass*10000,2);
         }
+        
+        public static String executeBMIcalcProcess() {
+            CalculateBodyMass ();
+            Console.WriteLine(BodyMassSuggestions);
+            Console.ReadLine();
+            
+        }
     }
 }
-
- 
