@@ -20,9 +20,8 @@ using System;
             if (age >= 20 && age < 65)
             {
 
-                Console.WriteLine(CalculateBodyMass());
-                Console.ReadLine();
-                Console.WriteLine(BodyMassSuggestions(CalculateBodyMass()));
+              
+                Console.WriteLine(ExecuteBMIcalcProcess());
                 Console.ReadLine();
 
             }
@@ -91,13 +90,14 @@ using System;
             return Math.Round(bodyMass * 10000, 2);
         }
 
-        public static String ExecuteBMIcalcProcess(string valuesIn)
+        public static String ExecuteBMIcalcProcess(double valueIn1, string valueIn2)
         {
-          CalculateBodyMass();
-          BodyMassSuggestions(CalculateBodyMass());
-        valuesIn = "Your bodymass is {1}. {2}" , CalculateBodyMass(),BodyMasssugestions(CalculateBodyMass());
+          valueIn1 = CalculateBodyMass();
+          valueIn2 = BodyMassSuggestions(CalculateBodyMass());
 
-        return valuesIn;
+        return Console.WriteLine("Your bodymass is" + CalculateBodyMass() + " " + BodyMassSuggestions(CalculateBodyMass()));
+
+      
 
         }
     }
