@@ -1,8 +1,7 @@
 using System;
 
 
-namespace IT_projects__dev_phase
-{
+
     class Program
     {
         static void Main(string[] args)
@@ -33,8 +32,8 @@ namespace IT_projects__dev_phase
             }
 
 
-        }
-        public static string BodyMassSuggestions(double num)
+    }
+        public static String BodyMassSuggestions(double num)
         {
             string suggestion;
 
@@ -89,14 +88,16 @@ namespace IT_projects__dev_phase
             Console.WriteLine("What's your length in centimeters?");
             Double lengthSquare = Math.Pow(Double.Parse(Console.ReadLine()), 2);
             Double bodyMass = bodyWeight / lengthSquare;
-            return Math.Round( bodyMass*10000,2);
+            return Math.Round(bodyMass * 10000, 2);
         }
-        
-        public static String executeBMIcalcProcess() {
-            CalculateBodyMass ();
-            Console.WriteLine(BodyMassSuggestions);
-            Console.ReadLine();
-            
+
+        public static String ExecuteBMIcalcProcess(string valuesIn)
+        {
+          CalculateBodyMass();
+          BodyMassSuggestions(CalculateBodyMass());
+        valuesIn = "Your bodymass is {1}. {2}" , CalculateBodyMass(),BodyMasssugestions(CalculateBodyMass());
+
+        return valuesIn;
+
         }
     }
-}
