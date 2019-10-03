@@ -8,100 +8,68 @@ class Program
     {
         string name;
         int age;
-        //double bodyMass  = calculateBodyMass();
-        //int intBodyMass = int.Parse(calculateBodyMass().ToString()); 
-
-        //double weight;
-        //double length;
         Console.WriteLine("What's your name?");
         name = Console.ReadLine();
         Console.WriteLine("Hello " + name + " do you know c# sucks? Anyways, what's your age- type it below please?");
         age = int.Parse(Console.ReadLine());
         if (age >= 20 && age < 65)
         {
-
-
-            Console.WriteLine(ExecuteBMIcalcProcess(CalculateBodyMass(), BodyMassSuggestions(CalculateBodyMass())));
+            CalculateBodyMass();
             Console.ReadLine();
-
         }
         else
         {
             Console.WriteLine("You can not get right results as your age is not between 20-60 years. Therefore there will be no calculations, thank you!");
         }
-
-
-    }
-    public static String BodyMassSuggestions(double num)
-    {
-        string suggestion;
-
-        if (CalculateBodyMass() < 16)
-        {
-
-            suggestion = "You are in severe underweight)";
-            return suggestion;
-        }
-
-        else if (CalculateBodyMass() >= 16 && CalculateBodyMass() < 18.6)
-        {
-            suggestion = "You are in underweight)";
-            return suggestion;
-        }
-        else if (CalculateBodyMass() >= 18.6 && CalculateBodyMass() <= 25)
-        {
-            suggestion = "You are in normal weight)";
-            return suggestion;
-        }
-        else if (CalculateBodyMass() >= 25.1 && CalculateBodyMass() <= 30)
-        {
-            suggestion = "You are in overweight)";
-            return suggestion;
-        }
-
-        else if (CalculateBodyMass() >= 30.1 && CalculateBodyMass() <= 35)
-        {
-            suggestion = "You are in obesity)";
-            return suggestion;
-        }
-        else if (CalculateBodyMass() >= 35 && CalculateBodyMass() <= 40)
-        {
-            suggestion = "You are in high obesity)";
-            return suggestion;
-        }
-        else
-        {
-            suggestion = "You are in dangerous to healt level of  obesity)";
-            return suggestion;
-        }
-
-        //return suggestion;
-    }
-
-
-
-    public static Double CalculateBodyMass()
+        } 
+    
+    public static void CalculateBodyMass()
     {
         Console.WriteLine("What's your bodyweight in kg-s  -(use a point insetad of a comma) ?");
         Double bodyWeight = Double.Parse(Console.ReadLine());
         Console.WriteLine("What's your length in centimeters?");
         Double lengthSquare = Math.Pow(Double.Parse(Console.ReadLine()), 2);
         Double bodyMass = bodyWeight / lengthSquare;
-        return Math.Round(bodyMass * 10000, 2);
+        bodyMass = Math.Round(bodyMass * 10000, 2);
+        Console.WriteLine(bodyMass);
+        //Console.ReadLine();
+        string suggestion;
+
+        if (bodyMass < 16)
+        {
+            suggestion = "You are in severe underweight";
+        }
+
+        else if (bodyMass >= 16 && bodyMass < 18.6)
+        {
+            suggestion = "You are in underweight";
+        }
+        else if (bodyMass>= 18.6 && bodyMass <= 25)
+        {
+            suggestion = "You are in normal weight";
+        }
+        else if (bodyMass >= 25.1 && bodyMass <= 30)
+        {
+            suggestion = "You are in overweight";
+            
+        }
+
+        else if (bodyMass>= 30.1 && bodyMass <= 35)
+        {
+            suggestion = "You are in obesity";
+        }
+        else if (bodyMass >= 35 && bodyMass <= 40)
+        {
+            suggestion = "You are in high obesity";
+            
+        }
+        else
+        {
+            suggestion = "You are in dangerous to healt level of  obesity)";
+        }
+          Console.WriteLine (suggestion);
+          Console.ReadLine();
+          //return suggestion;
     }
 
-    public static String ExecuteBMIcalcProcess(double valueIn1, string valueIn2)
-    {
-        string result = "text";
-        valueIn1 = CalculateBodyMass();
-        valueIn2 = BodyMassSuggestions(CalculateBodyMass());
-        result = ("Your bodymass is" + CalculateBodyMass() + " " + BodyMassSuggestions(CalculateBodyMass()));
-
-
-        return result; 
-
-       
-
-
-    }
-}
+  }
